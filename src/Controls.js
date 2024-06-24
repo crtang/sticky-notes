@@ -2,32 +2,36 @@ import React from "react";
 
 const Controls = (props) => {
 	return (
-		<section>
-			<div>
-				<button>
+		<section className="doc-controls">
+			<div className="controls-section">
+				<button className="controls-button">
 					<strong>B</strong>
 				</button>
-				<button>
+				<button className="controls-button">
 					<em>I</em>
 				</button>
-				<button className="underline">
-					U
+				<button className="controls-button underline-button">
+					<span className="underline">U</span>
+				</button>
+				<button className="controls-button">
+					<span className="crossed-out">S</span>
 				</button>
 			</div>
 
-			<div>
-				<button>
+			<div className="controls-section">
+				<button className="controls-button">
 					{/* left-align */}
+					U
 				</button>
-				<button>
+				<button className="controls-button">
 					{/* center-align */}
 					U
 				</button>
-				<button>
+				<button className="controls-button">
 					{/* right-align */}
 					U
 				</button>
-				<button>
+				<button className="controls-button">
 					{/* justify */}
 					U
 				</button>

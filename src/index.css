@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.hide {
+  display: none;
+}
+
 .app-header__title {
   margin: 5px 0;
   text-align: center;
@@ -20,32 +24,134 @@ code {
 .app-header__controls {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 10px;
   padding: 20px;
 }
 
-.add-new {
+.add-new,
+.search {
   margin: 10px;
+  padding: 5px 8px;
+}
+
+.add-new {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: #4b7d85;
+  color: #ffffff;
+}
+
+.add-new:hover {
+  background-color: #34575d;
 }
 
 .search {
-  border: 1px solid;
+  flex-grow: 1;
+  max-width: 300px;
+  border: 1px solid #4b7d85;
   border-radius: 5px;
 }
 
+.doc-controls {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.controls-section button {
+  margin: 0 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 2.5px;
+}
+
+.controls-button {
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.crossed-out {
+  text-decoration: line-through;
+}
+
+input,
+textarea {
+  outline: none;
+  resize: none;
+  border: none;
+}
+
 .docs-list {
-  padding: 0
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 10px;
 }
 
 .docs-list-item {
-  padding: 0;
+  /*padding: 0;*/
   list-style-type: none;
+}
+
+.doc {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #ffffff;
+  margin: 10px;
+  border: 1px solid #4b7d85;
+  border-radius: 5px;
+}
+
+.doc-title, .doc-content {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  overflow: scroll;
+}
+
+.doc-title {
+  font-size: 18px;
+}
+
+.doc-content {
+  flex-grow: 1;
+}
+
+.doc-content:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .doc-content {
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
+  height: 50vh;
   resize: none;
   padding: 25px;
-  overflow: scroll;
+}
+
+.delete-note {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 18px;
+  padding: 5px;
+  color: #666666;
+}
+
+.delete-note:hover {
+  cursor: pointer;
+  color: #000000;
 }
