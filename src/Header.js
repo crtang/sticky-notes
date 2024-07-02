@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = (props) => {
 	const callSearch = (e) => {
-		props.onSearch(e.target.value);
+		return props.onSearch(e.target.value);
 	}
 
 	return (
@@ -12,11 +12,12 @@ const Header = (props) => {
 				<button className="add-new" onClick={props.addDoc}>
 					+ New Document
 				</button>
+
 				<input 
 					className="search"
 					type="text"
 					placeholder="Type here to search..."
-					value={props.searchText}
+					// value={props.searchText}
 					onChange={callSearch}
 				/>
 			</aside>

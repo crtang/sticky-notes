@@ -30,12 +30,14 @@ code {
 }
 
 .add-new,
+.clear-storage,
 .search {
   margin: 10px;
   padding: 5px 8px;
 }
 
-.add-new {
+.add-new,
+.clear-storage {
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -44,7 +46,8 @@ code {
   color: #ffffff;
 }
 
-.add-new:hover {
+.add-new:hover,
+.clear-storage:hover {
   background-color: #34575d;
 }
 
@@ -109,13 +112,13 @@ textarea {
   position: relative;
   background-color: #ffffff;
   margin: 10px;
-  border: 1px solid #4b7d85;
+  padding: 10px;
+  border: thin solid #4b7d85;
   border-radius: 5px;
 }
 
 .doc-title, .doc-content {
   width: 100%;
-  padding: 10px;
   border: none;
   outline: none;
   overflow: scroll;
@@ -136,10 +139,8 @@ textarea {
 
 .doc-content {
   box-sizing: border-box;
-  width: 50vw;
-  height: 50vh;
   resize: none;
-  padding: 25px;
+  padding: 25px 0 0 0;
 }
 
 .delete-note {

@@ -24,7 +24,6 @@ const Doc = (props) => {
 				className="doc-title"
 				type="text"
 				placeholder="Untitled"
-				defaultValue={props.doc.title}
 				onChange={updateTitle}
 			/>
 
@@ -32,11 +31,10 @@ const Doc = (props) => {
 				className="doc-content"
 				type="text"
 				placeholder="Type here."
-				defaultValue={props.doc.content}
 				onChange={updateContent}
 			/>
 
-			<span className="delete-note" onClick={deleteThis}>
+		<span className="delete-note" onClick={deleteThis} >
 				X
 			</span>
     </li>

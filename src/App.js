@@ -6,28 +6,37 @@ import './App.css';
 import { createRoot } from "react-dom/client";
 
 class App extends Component {
-  state = {
-    docs: [
-      {
-        id: Date.now(),
-        title: "Untitled",
-        content: "Type here.",
-        doesMatchSearch: true,
-      },
-    ],
-    searchText:  "",
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      docs: [
+        {
+          id: Date.now(),
+          title: "Untitled",
+          description: "Type here.",
+          doesMatchSearch: true,
+        },
+      ],
+      searchText: "",
+    };
+
+    this.addDoc = this.addDoc.bind(this);
+    this.onType = this.onType.bind(this);
+    this.onSearch = this.onSearch.bind(this);
+    this.deleteDoc = this.deleteDoc.bind(this);
   };
 
   componentDidMount() {
-    const storedDocs = localStorage.getItem("docs");
+    const storedDocs = sessionStorage.getItem("docs");
     if (storedDocs) {
       this.state.docs = JSON.parse(storedDocs);
     }
   };
 
-  componentDidUpdated() {
+  componentDidUpdate() {
     const savedDocs = JSON.stringify(this.state.docs);
-    localStorage.setItem("docs", savedDocs);
+    sessionStorage.setItem("docs", savedDocs);
   };
 
   addDoc = () => {
