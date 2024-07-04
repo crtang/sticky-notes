@@ -13,11 +13,14 @@ const Header = (props) => {
 					+ New Document
 				</button>
 
+				<button className="clear-docs" onClick={props.clearDocs}>
+					Clear Documents
+				</button>
+
 				<input 
 					className="search"
 					type="text"
 					placeholder="Type here to search..."
-					// value={props.searchText}
 					onChange={callSearch}
 				/>
 			</aside>

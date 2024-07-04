@@ -3,7 +3,6 @@ import Header from "./Header";
 import Controls from "./Controls";
 import DocsList from "./DocsList";
 import './App.css';
-import { createRoot } from "react-dom/client";
 
 class App extends Component {
   constructor(props) {
@@ -22,13 +21,14 @@ class App extends Component {
     };
 
     this.addDoc = this.addDoc.bind(this);
+    this.clearDocs = this.clearDocs.bind(this);
     this.onType = this.onType.bind(this);
     this.onSearch = this.onSearch.bind(this);
     this.deleteDoc = this.deleteDoc.bind(this);
   };
 
   componentDidMount() {
-    const storedDocs = sessionStorage.getItem("docs");
+    const storedDocs = localStorage.getItem("docs");
     if (storedDocs) {
       this.state.docs = JSON.parse(storedDocs);
     }
@@ -36,7 +36,13 @@ class App extends Component {
 
   componentDidUpdate() {
     const savedDocs = JSON.stringify(this.state.docs);
-    sessionStorage.setItem("docs", savedDocs);
+    try {
+      localStorage.setItem("docs", savedDocs);
+    } catch (e) {
+      if (e.code === "22" || e.code === "1024") {
+        alert('Quota exceeded! Please delete documents or click the "Clear Documents" button.');
+      }
+    }
   };
 
   addDoc = () => {
@@ -50,6 +56,21 @@ class App extends Component {
     const newDocs = [...this.state.docs, newDoc];
     this.setState({ docs: newDocs });
   };
+
+  clearDocs = () => {
+    /* const newDoc = {
+      id: Date.now(),
+      title: "Untitled",
+      content: "Type here.",
+      doesMatchSearch: true,
+    };
+
+    const newDocs = [newDoc];
+    const savedDocs = JSON.stringify(newDocs);
+    localStorage.setItem("docs", savedDocs); */
+    window.localStorage.clear();
+    window.location.reload();
+  }
 
   onType = (id, updatedField, updatedValue) => {
     // iterate over docs
@@ -74,7 +95,7 @@ class App extends Component {
     const searchTerms = text.toLowerCase();
     // compare search text with title and content text
     const updatedDocs = this.state.docs.map((doc) => {
-      if (!searchTerms) {
+      if (!searchTerms || searchTerms === undefined) {
         doc.doesMatchSearch = true;
         return doc;
       } else if (doc.title === undefined && doc.content === undefined) {
@@ -110,12 +131,13 @@ class App extends Component {
     });
 
     this.setState({ docs: updatedDocs });
+
   };
 
   render() {
     return (
       <div>
-        <Header addDoc={this.addDoc} searchText={this.state.searchText} onSearch={this.onSearch} />
+        <Header addDoc={this.addDoc} clearDocs={this.clearDocs} searchText={this.state.searchText} onSearch={this.onSearch} />
         <Controls />
         <DocsList docs={this.state.docs} onType={this.onType} deleteDoc={this.deleteDoc} />
       </div>

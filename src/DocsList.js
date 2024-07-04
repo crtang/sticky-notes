@@ -4,7 +4,7 @@ import Doc from "./Doc";
 const DocsList = (props) => {
 	// get boolean values for whether or not doc text matches search terms and
 	// filter docs that don't match search
-	const searchMatches = props.docs.filter((doc) => doc.doesMatchSearch == true );
+	const searchMatches = props.docs.filter((doc) => doc.doesMatchSearch === true );
 
   // render docs
 	const renderDoc = (doc) =>
