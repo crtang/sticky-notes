@@ -47,7 +47,8 @@ code {
 }
 
 .add-new:hover,
-.clear-docs:hover {
+.clear-docs:hover,
+.controls-button:hover {
   background-color: #34575d;
 }
 
@@ -71,9 +72,21 @@ code {
   border-radius: 2.5px;
 }
 
+.style-button,
 .controls-button {
-  border: 1px solid #000000;
-  background-color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #4b7d85;
+  color: #ffffff;
+}
+.controls-button {
+  padding: 1px;
+}
+
+.resize {
+  width: 23px;
+  height: 23px;
 }
 
 .underline {

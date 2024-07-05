@@ -20,14 +20,16 @@ const Doc = (props) => {
 
   return (
     <li className="docs-list-item doc">
-			<input
+			<div
+				contentEditable
 				className="doc-title"
 				type="text"
 				placeholder="Untitled"
 				onChange={updateTitle}
 			/>
 
-      <textarea
+      <div
+				contentEditable
 				className="doc-content"
 				type="text"
 				placeholder="Type here."
