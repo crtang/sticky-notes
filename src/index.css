@@ -118,23 +118,31 @@ textarea {
 }
 
 .doc {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   position: relative;
   background-color: #ffffff;
-  margin: 10px;
-  padding: 10px;
+  margin: 20px;
+  padding: 20px;
   border: thin solid #4b7d85;
   border-radius: 5px;
+}
+
+[contenteditable=true]:empty::before {
+  content: attr(placeholder);
+  opacity: 0.6;
 }
 
 .doc-title, .doc-content {
   width: 100%;
   border: none;
   outline: none;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .doc-title {
@@ -158,7 +166,7 @@ textarea {
 
 .delete-note {
   position: absolute;
-  top: 0px;
+  top: -5px;
   right: 0px;
   font-size: 18px;
   padding: 5px;
