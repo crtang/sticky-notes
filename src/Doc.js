@@ -10,6 +10,7 @@ const Doc = (props) => {
 	const updateContent = (e) => {
 		const updatedContent = e.target.value;
 		const editedDocId = props.doc.id;
+
 		props.onType(editedDocId, "content", updatedContent);
 	};
 
@@ -20,16 +21,14 @@ const Doc = (props) => {
 
   return (
     <li className="docs-list-item doc">
-			<div
-				contentEditable
+			<input
 				className="doc-title"
 				type="text"
 				placeholder="Untitled"
 				onChange={updateTitle}
 			/>
 
-      <div
-				contentEditable
+      <textarea
 				className="doc-content"
 				type="text"
 				placeholder="Type here."

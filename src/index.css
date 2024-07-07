@@ -130,11 +130,6 @@ textarea {
   border-radius: 5px;
 }
 
-[contenteditable=true]:empty::before {
-  content: attr(placeholder);
-  opacity: 0.6;
-}
-
 .doc-title, .doc-content {
   width: 100%;
   border: none;

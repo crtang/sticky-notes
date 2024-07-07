@@ -58,16 +58,6 @@ class App extends Component {
   };
 
   clearDocs = () => {
-    /* const newDoc = {
-      id: Date.now(),
-      title: "Untitled",
-      content: "Type here.",
-      doesMatchSearch: true,
-    };
-
-    const newDocs = [newDoc];
-    const savedDocs = JSON.stringify(newDocs);
-    localStorage.setItem("docs", savedDocs); */
     window.localStorage.clear();
     window.location.reload();
   }
@@ -89,6 +79,16 @@ class App extends Component {
     // update docs
     this.setState({ docs: updatedDocs });
   };
+
+  emptyContent = (id, updatedField, updatedValue) => {
+    const updatedDocs = this.state.docs.map((doc) => {
+      if (doc.id !== id) {
+        return doc;
+      } else if (updatedField === "title") {
+        doc.title = updatedValue;
+      }
+    })
+  }
 
   onSearch = (text) => {
     // lowercase search text
@@ -138,7 +138,7 @@ class App extends Component {
     return (
       <div>
         <Header addDoc={this.addDoc} clearDocs={this.clearDocs} searchText={this.state.searchText} onSearch={this.onSearch} />
-        <Controls />
+        {/* <Controls /> */}
         <DocsList docs={this.state.docs} onType={this.onType} deleteDoc={this.deleteDoc} />
       </div>
     )
