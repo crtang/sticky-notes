@@ -35,7 +35,7 @@ const Doc = (props) => {
 				onChange={updateContent}
 			/>
 
-		<span className="delete-note" onClick={deleteThis} >
+			<span className="delete-note" onClick={deleteThis} >
 				X
 			</span>
     </li>
