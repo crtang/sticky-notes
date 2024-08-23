@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/simple-text-editor/static/css/main.adb6ec3f.css",
-    "main.js": "/simple-text-editor/static/js/main.5ce1fb8c.js",
-    "index.html": "/simple-text-editor/index.html",
-    "static/media/text-center.svg": "/simple-text-editor/static/media/text-center.ce6dc38eda809e0123c408eee11be7ab.svg",
-    "static/media/text-justify.svg": "/simple-text-editor/static/media/text-justify.b3d0cb931488200b1d7c8f983ab9db21.svg",
-    "static/media/text-left.svg": "/simple-text-editor/static/media/text-left.05522f33fb059f8575157116ba6ca277.svg",
-    "static/media/text-right.svg": "/simple-text-editor/static/media/text-right.c22d9ba9da118889a1e98edca8616c25.svg",
-    "main.adb6ec3f.css.map": "/simple-text-editor/static/css/main.adb6ec3f.css.map",
-    "main.5ce1fb8c.js.map": "/simple-text-editor/static/js/main.5ce1fb8c.js.map"
+    "main.css": "/sticky-notes/static/css/main.089ca64e.css",
+    "main.js": "/sticky-notes/static/js/main.79a6b273.js",
+    "static/media/kent-pilcher-87MIF4vqHWg-unsplash.jpg": "/sticky-notes/static/media/kent-pilcher-87MIF4vqHWg-unsplash.976b68a9deb1d4b5a50a.jpg",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/sticky-notes/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
+    "static/media/CourierPrime-Regular.ttf": "/sticky-notes/static/media/CourierPrime-Regular.7503a2e9660bb6f608fb.ttf",
+    "index.html": "/sticky-notes/index.html",
+    "main.089ca64e.css.map": "/sticky-notes/static/css/main.089ca64e.css.map",
+    "main.79a6b273.js.map": "/sticky-notes/static/js/main.79a6b273.js.map"
   },
   "entrypoints": [
-    "static/css/main.adb6ec3f.css",
-    "static/js/main.5ce1fb8c.js"
+    "static/css/main.089ca64e.css",
+    "static/js/main.79a6b273.js"
   ]
 }
