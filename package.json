@@ -1,7 +1,7 @@
 {
-  "name": "simple-text-editor",
+  "name": "sticky-notes",
   "version": "0.1.0",
-  "homepage": "https://crtang.github.io/simple-text-editor/",
+  "homepage": "https://crtang.github.io/sticky-notes/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
