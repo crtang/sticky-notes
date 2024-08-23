@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Header from "./Header";
-import Controls from "./Controls";
-import DocsList from "./DocsList";
+import NotesList from "./NotesList";
 import './App.css';
 
 class App extends Component {
@@ -9,7 +8,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      docs: [
+      notes: [
         {
           id: Date.now(),
           title: "Untitled",
@@ -20,72 +19,72 @@ class App extends Component {
       searchText: "",
     };
 
-    this.addDoc = this.addDoc.bind(this);
-    this.clearDocs = this.clearDocs.bind(this);
+    this.addNote = this.addNote.bind(this);
+    this.clearNotes = this.clearNotes.bind(this);
     this.onType = this.onType.bind(this);
     this.onSearch = this.onSearch.bind(this);
-    this.deleteDoc = this.deleteDoc.bind(this);
+    this.deleteNote = this.deleteNote.bind(this);
   };
 
   componentDidMount() {
-    const storedDocs = localStorage.getItem("docs");
-    if (storedDocs) {
-      this.state.docs = JSON.parse(storedDocs);
+    const storedNotes = localStorage.getItem("notes");
+    if (storedNotes) {
+      this.state.notes = JSON.parse(storedNotes);
     }
   };
 
   componentDidUpdate() {
-    const savedDocs = JSON.stringify(this.state.docs);
+    const savedNotes = JSON.stringify(this.state.notes);
     try {
-      localStorage.setItem("docs", savedDocs);
+      localStorage.setItem("notes", savedNotes);
     } catch (e) {
       if (e.code === "22" || e.code === "1024") {
-        alert('Quota exceeded! Please delete documents or click the "Clear Documents" button.');
+        alert('Quota exceeded! Please delete notes or click the "Clear Notes" button.');
       }
     }
   };
 
-  addDoc = () => {
-    const newDoc = {
+  addNote = () => {
+    const newNote = {
       id: Date.now(),
       title: "Untitled",
       content: "Type here.",
       doesMatchSearch: true,
     };
 
-    const newDocs = [...this.state.docs, newDoc];
-    this.setState({ docs: newDocs });
+    const newNotes = [...this.state.notes, newNote];
+    this.setState({ notes: newNotes });
   };
 
-  clearDocs = () => {
+  clearNotes = () => {
     window.localStorage.clear();
     window.location.reload();
   }
 
   onType = (id, updatedField, updatedValue) => {
-    // iterate over docs
-    const updatedDocs = this.state.docs.map((doc) => {
-      // find id of doc that user typed in
-      if (doc.id !== id) {
-        return doc;
+    // iterate over notes
+    const updatedNotes = this.state.notes.map((note) => {
+      // find id of note that user typed in
+      if (note.id !== id) {
+        return note;
       } else if (updatedField === "title") {
-        doc.title = updatedValue;
-        return doc;
+        note.title = updatedValue;
+        return note;
       } else {
-        doc.content = updatedValue;
-        return doc;
+        note.content = updatedValue;
+        return note;
       }
     })
-    // update docs
-    this.setState({ docs: updatedDocs });
+    // update notes
+    this.setState({ notes: updatedNotes });
   };
 
   emptyContent = (id, updatedField, updatedValue) => {
-    const updatedDocs = this.state.docs.map((doc) => {
-      if (doc.id !== id) {
-        return doc;
+    const updatedNotes = this.state.notes.map((note) => {
+      if (note.id !== id) {
+        return note;
       } else if (updatedField === "title") {
-        doc.title = updatedValue;
+        note.title = updatedValue;
       }
     })
   }
@@ -94,53 +93,52 @@ class App extends Component {
     // lowercase search text
     const searchTerms = text.toLowerCase();
     // compare search text with title and content text
-    const updatedDocs = this.state.docs.map((doc) => {
+    const updatedNotes = this.state.notes.map((note) => {
       if (!searchTerms || searchTerms === undefined) {
-        doc.doesMatchSearch = true;
-        return doc;
-      } else if (doc.title === undefined && doc.content === undefined) {
-        doc.doesMatchSearch = false;
-        return doc;
-      } else if (doc.title === undefined && doc.content !== undefined) {
-        const contentMatch = doc.content.toLowerCase().includes(searchTerms);
-        doc.doesMatchSearch = contentMatch;
-        return doc;
-      } else if (doc.title !== undefined && doc.content === undefined) {
-        const contentMatch = doc.title.toLowerCase().includes(searchTerms);
-        doc.doesMatchSearch = contentMatch;
-        return doc;
+        note.doesMatchSearch = true;
+        return note;
+      } else if (note.title === undefined && note.content === undefined) {
+        note.doesMatchSearch = false;
+        return note;
+      } else if (note.title === undefined && note.content !== undefined) {
+        const contentMatch = note.content.toLowerCase().includes(searchTerms);
+        note.doesMatchSearch = contentMatch;
+        return note;
+      } else if (note.title !== undefined && note.content === undefined) {
+        const contentMatch = note.title.toLowerCase().includes(searchTerms);
+        note.doesMatchSearch = contentMatch;
+        return note;
       } else {
-        const titleMatch = doc.title.toLowerCase().includes(searchTerms);
-        const contentMatch = doc.content.toLowerCase().includes(searchTerms);
+        const titleMatch = note.title.toLowerCase().includes(searchTerms);
+        const contentMatch = note.content.toLowerCase().includes(searchTerms);
         const matches = titleMatch || contentMatch;
-        doc.doesMatchSearch = matches;
-        return doc;
+        note.doesMatchSearch = matches;
+        return note;
       }
     });
     // filter notes
-    this.setState({ docs: updatedDocs });
+    this.setState({ notes: updatedNotes });
   };
 
-  deleteDoc = (id) => {
-    const updatedDocs = this.state.docs.map((doc) => {
-      if (doc.id !== id) {
-        return doc;
+  deleteNote = (id) => {
+    const updatedNotes = this.state.notes.map((note) => {
+      if (note.id !== id) {
+        return note;
       } else {
-        return { ...this.state.docs };
+        return { ...this.state.notes };
       }
     });
 
-    this.setState({ docs: updatedDocs });
+    this.setState({ notes: updatedNotes });
 
   };
 
   render() {
     return (
-      <div>
-        <Header addDoc={this.addDoc} clearDocs={this.clearDocs} searchText={this.state.searchText} onSearch={this.onSearch} />
-        {/* <Controls /> */}
-        <DocsList docs={this.state.docs} onType={this.onType} deleteDoc={this.deleteDoc} />
-      </div>
+      <Fragment>
+        <Header addNote={this.addNote} clearNotes={this.clearNotes} searchText={this.state.searchText} onSearch={this.onSearch} />
+        <NotesList notes={this.state.notes} onType={this.onType} deleteNote={this.deleteNote} />
+      </Fragment>
     )
   };
 }

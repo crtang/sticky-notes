@@ -7,14 +7,14 @@ const Header = (props) => {
 
 	return (
 		<header>
-			<h1 className="app-header__title">Simple Text Editor</h1>
+			<h1 className="app-header__title">Sticky Notes</h1>
 			<aside className="app-header__controls">
-				<button className="add-new" onClick={props.addDoc}>
-					+ New Document
+				<button className="add-new" onClick={props.addNote}>
+					+ New Note
 				</button>
 
-				<button className="clear-docs" onClick={props.clearDocs}>
-					Clear Documents
+				<button className="clear-notes" onClick={props.clearNotes}>
+					Clear Notes
 				</button>
 
 				<input 

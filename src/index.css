@@ -1,10 +1,21 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  src: url('./fonts/CourierPrime-Regular.ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url('./imgs/kent-pilcher-87MIF4vqHWg-unsplash.jpg') no-repeat fixed center center;
+  background-size: cover;
 }
 
 code {
@@ -17,7 +28,7 @@ code {
 }
 
 .app-header__title {
-  margin: 5px 0;
+  margin: 5vh 0;
   text-align: center;
 }
 
@@ -30,14 +41,15 @@ code {
 }
 
 .add-new,
-.clear-docs,
+.clear-notes,
 .search {
   margin: 10px;
   padding: 5px 8px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .add-new,
-.clear-docs {
+.clear-notes {
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -47,7 +59,7 @@ code {
 }
 
 .add-new:hover,
-.clear-docs:hover,
+.clear-notes:hover,
 .controls-button:hover {
   background-color: #34575d;
 }
@@ -65,38 +77,6 @@ code {
   justify-content: space-around;
 }
 
-.controls-section button {
-  margin: 0 5px;
-  width: 25px;
-  height: 25px;
-  border-radius: 2.5px;
-}
-
-.style-button,
-.controls-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: #4b7d85;
-  color: #ffffff;
-}
-.controls-button {
-  padding: 1px;
-}
-
-.resize {
-  width: 23px;
-  height: 23px;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.crossed-out {
-  text-decoration: line-through;
-}
-
 input,
 textarea {
   outline: none;
@@ -104,7 +84,15 @@ textarea {
   border: none;
 }
 
-.docs-list {
+input {
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+  font-family: 'Courier Prime', monospace;
+}
+
+.notes-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -112,12 +100,12 @@ textarea {
   padding: 10px;
 }
 
-.docs-list-item {
+.notes-list-item {
   /*padding: 0;*/
   list-style-type: none;
 }
 
-.doc {
+.note {
   width: 220px;
   height: 220px;
   display: flex;
@@ -130,7 +118,7 @@ textarea {
   border-radius: 5px;
 }
 
-.doc-title, .doc-content {
+.note-title, .note-content {
   width: 100%;
   border: none;
   outline: none;
@@ -140,20 +128,20 @@ textarea {
   overflow-wrap: break-word;
 }
 
-.doc-title {
+.note-title {
   font-size: 18px;
 }
 
-.doc-content {
+.note-content {
   flex-grow: 1;
 }
 
-.doc-content:focus {
+.note-content:focus {
   box-shadow: none;
   outline: none;
 }
 
-.doc-content {
+.note-content {
   box-sizing: border-box;
   resize: none;
   padding: 25px 0 0 0;

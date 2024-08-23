@@ -1,35 +1,35 @@
 import React from "react";
 
-const Doc = (props) => {
+const Note = (props) => {
 	const updateTitle = (e) => {
 		const updatedTitle = e.target.value;
-		const editedDocId = props.doc.id;
-		props.onType(editedDocId, "title", updatedTitle);
+		const editedNoteId = props.note.id;
+		props.onType(editedNoteId, "title", updatedTitle);
 	}
 
 	const updateContent = (e) => {
 		const updatedContent = e.target.value;
-		const editedDocId = props.doc.id;
+		const editedNoteId = props.note.id;
 
-		props.onType(editedDocId, "content", updatedContent);
+		props.onType(editedNoteId, "content", updatedContent);
 	};
 
 	const deleteThis = () => {
-		const docToDeleteId = props.doc.id;
-		props.deleteDoc(docToDeleteId);
+		const noteToDeleteId = props.note.id;
+		props.deleteNote(noteToDeleteId);
 	};
 
   return (
-    <li className="docs-list-item doc">
+    <li className="notes-list-item note">
 			<input
-				className="doc-title"
+				className="note-title"
 				type="text"
 				placeholder="Untitled"
 				onChange={updateTitle}
 			/>
 
       <textarea
-				className="doc-content"
+				className="note-content"
 				type="text"
 				placeholder="Type here."
 				onChange={updateContent}
@@ -42,4 +42,4 @@ const Doc = (props) => {
   );
 };
 
-export default Doc;
+export default Note;
