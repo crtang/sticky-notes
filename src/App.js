@@ -28,6 +28,7 @@ class App extends Component {
 
   componentDidMount() {
     const storedNotes = localStorage.getItem("notes");
+    
     if (storedNotes) {
       this.state.notes = JSON.parse(storedNotes);
     }
@@ -35,11 +36,14 @@ class App extends Component {
 
   componentDidUpdate() {
     const savedNotes = JSON.stringify(this.state.notes);
-    try {
-      localStorage.setItem("notes", savedNotes);
-    } catch (e) {
-      if (e.code === "22" || e.code === "1024") {
-        alert('Quota exceeded! Please delete notes or click the "Clear Notes" button.');
+
+    if (!localStorage.getItem("notes")) {
+      try {
+        localStorage.setItem("notes", savedNotes);
+      } catch (e) {
+        if (e.code === "22" || e.code === "1024") {
+          alert('Quota exceeded! Please delete notes or click the "Clear Notes" button.');
+        }
       }
     }
   };
