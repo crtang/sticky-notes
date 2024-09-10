@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sticky-notes/static/css/main.089ca64e.css",
+    "main.css": "/sticky-notes/static/css/main.5da29bed.css",
     "main.js": "/sticky-notes/static/js/main.79a6b273.js",
-    "static/media/kent-pilcher-87MIF4vqHWg-unsplash.jpg": "/sticky-notes/static/media/kent-pilcher-87MIF4vqHWg-unsplash.976b68a9deb1d4b5a50a.jpg",
     "static/media/Montserrat-VariableFont_wght.ttf": "/sticky-notes/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
+    "static/media/john-fowler-RsRTIofe0HE-unsplash.jpg": "/sticky-notes/static/media/john-fowler-RsRTIofe0HE-unsplash.ef2561e49cb238a8de04.jpg",
     "static/media/CourierPrime-Regular.ttf": "/sticky-notes/static/media/CourierPrime-Regular.7503a2e9660bb6f608fb.ttf",
     "index.html": "/sticky-notes/index.html",
-    "main.089ca64e.css.map": "/sticky-notes/static/css/main.089ca64e.css.map",
+    "main.5da29bed.css.map": "/sticky-notes/static/css/main.5da29bed.css.map",
     "main.79a6b273.js.map": "/sticky-notes/static/js/main.79a6b273.js.map"
   },
   "entrypoints": [
-    "static/css/main.089ca64e.css",
+    "static/css/main.5da29bed.css",
     "static/js/main.79a6b273.js"
   ]
 }
