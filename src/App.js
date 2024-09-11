@@ -37,13 +37,11 @@ class App extends Component {
   componentDidUpdate() {
     const savedNotes = JSON.stringify(this.state.notes);
 
-    if (!localStorage.getItem("notes")) {
-      try {
-        localStorage.setItem("notes", savedNotes);
-      } catch (e) {
-        if (e.code === "22" || e.code === "1024") {
-          alert('Quota exceeded! Please delete notes or click the "Clear Notes" button.');
-        }
+    try {
+      localStorage.setItem("notes", savedNotes);
+    } catch (e) {
+      if (e.code === "22" || e.code === "1024") {
+        alert('Quota exceeded! Please delete notes or click the "Clear Notes" button.');
       }
     }
   };

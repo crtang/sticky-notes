@@ -17,12 +17,14 @@ const Header = (props) => {
 					Clear Notes
 				</button>
 
-				<input 
-					className="search"
-					type="text"
-					placeholder="Type here to search..."
-					onChange={callSearch}
-				/>
+				<label>
+					<input 
+						className="search"
+						type="text"
+						placeholder="Type here to search..."
+						onChange={callSearch}
+					/>
+				</label>
 			</aside>
 		</header>
 	);
