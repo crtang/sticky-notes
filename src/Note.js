@@ -21,23 +21,19 @@ const Note = (props) => {
 
   return (
     <li className="notes-list-item note">
-			<label>
-				<input
-					className="note-title"
-					type="text"
-					placeholder="Untitled"
-					onChange={updateTitle}
-				/>
-			</label>
+			<input
+				className="note-title"
+				type="text"
+				placeholder="Untitled"
+				onChange={updateTitle}
+			/>
 
-      <label>
-				<textarea
-					className="note-content"
-					type="text"
-					placeholder="Type here."
-					onChange={updateContent}
-				/>
-			</label>
+      <textarea
+				className="note-content"
+				type="text"
+				placeholder="Type here."
+				onChange={updateContent}
+			/>
 
 			<span className="delete-note" onClick={deleteThis} >
 				X
