@@ -59,7 +59,7 @@ class App extends Component {
   };
 
   clearNotes = () => {
-    window.localStorage.clear();
+    window.localStorage.clear(); // clear only notes, nothing else in LS
     window.location.reload();
   }
 

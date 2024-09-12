@@ -5,7 +5,7 @@ import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Fragment>
+  <React.StrictMode>
     <App />
-  </Fragment>
+  </React.StrictMode>
 );
