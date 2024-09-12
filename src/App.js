@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Header from "./Header";
 import NotesList from "./NotesList";
 import './App.css';
@@ -28,7 +28,7 @@ class App extends Component {
 
   componentDidMount() {
     const storedNotes = localStorage.getItem("notes");
-    
+
     if (storedNotes) {
       this.state.notes = JSON.parse(storedNotes);
     }
@@ -137,10 +137,10 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
+      <main>
         <Header addNote={this.addNote} clearNotes={this.clearNotes} searchText={this.state.searchText} onSearch={this.onSearch} />
         <NotesList notes={this.state.notes} onType={this.onType} deleteNote={this.deleteNote} />
-      </Fragment>
+      </main>
     )
   };
 }
