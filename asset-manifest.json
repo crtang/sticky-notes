@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sticky-notes/static/css/main.0713772c.css",
-    "main.js": "/sticky-notes/static/js/main.049eaefd.js",
+    "main.css": "/sticky-notes/static/css/main.db987eb5.css",
+    "main.js": "/sticky-notes/static/js/main.fa534e8a.js",
     "static/media/Montserrat-VariableFont_wght.ttf": "/sticky-notes/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
     "static/media/john-fowler-RsRTIofe0HE-unsplash.jpg": "/sticky-notes/static/media/john-fowler-RsRTIofe0HE-unsplash.00da1f8109d5cf4ac775.jpg",
     "static/media/CourierPrime-Regular.ttf": "/sticky-notes/static/media/CourierPrime-Regular.7503a2e9660bb6f608fb.ttf",
     "index.html": "/sticky-notes/index.html",
-    "main.0713772c.css.map": "/sticky-notes/static/css/main.0713772c.css.map",
-    "main.049eaefd.js.map": "/sticky-notes/static/js/main.049eaefd.js.map"
+    "main.db987eb5.css.map": "/sticky-notes/static/css/main.db987eb5.css.map",
+    "main.fa534e8a.js.map": "/sticky-notes/static/js/main.fa534e8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0713772c.css",
-    "static/js/main.049eaefd.js"
+    "static/css/main.db987eb5.css",
+    "static/js/main.fa534e8a.js"
   ]
 }
