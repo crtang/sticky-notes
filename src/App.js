@@ -12,7 +12,7 @@ class App extends Component {
         {
           id: Date.now(),
           title: "Untitled",
-          description: "Type here.",
+          content: "Type here.",
           doesMatchSearch: true,
         },
       ],
@@ -30,7 +30,7 @@ class App extends Component {
     const storedNotes = localStorage.getItem("notes");
 
     if (storedNotes) {
-      this.state.notes = JSON.parse(storedNotes);
+      this.setState({notes: JSON.parse(storedNotes)});
     }
   };
 
@@ -59,7 +59,7 @@ class App extends Component {
   };
 
   clearNotes = () => {
-    window.localStorage.clear(); // clear only notes, nothing else in LS
+    this.setState({ notes: "" });
     window.location.reload();
   }
 
@@ -80,16 +80,6 @@ class App extends Component {
     // update notes
     this.setState({ notes: updatedNotes });
   };
-
-  emptyContent = (id, updatedField, updatedValue) => {
-    const updatedNotes = this.state.notes.map((note) => {
-      if (note.id !== id) {
-        return note;
-      } else if (updatedField === "title") {
-        note.title = updatedValue;
-      }
-    })
-  }
 
   onSearch = (text) => {
     // lowercase search text
@@ -123,16 +113,9 @@ class App extends Component {
   };
 
   deleteNote = (id) => {
-    const updatedNotes = this.state.notes.map((note) => {
-      if (note.id !== id) {
-        return note;
-      } else {
-        return { ...this.state.notes };
-      }
-    });
+    const updatedNotes = this.state.notes.filter((note) => note.id !== id);
 
     this.setState({ notes: updatedNotes });
-
   };
 
   render() {

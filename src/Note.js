@@ -25,6 +25,7 @@ const Note = (props) => {
 				className="note-title"
 				type="text"
 				placeholder="Untitled"
+				value={props.note.title}
 				onChange={updateTitle}
 			/>
 
@@ -32,6 +33,7 @@ const Note = (props) => {
 				className="note-content"
 				type="text"
 				placeholder="Type here."
+				value={props.note.content}
 				onChange={updateContent}
 			/>
 
