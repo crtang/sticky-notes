@@ -74,7 +74,7 @@ code {
 
 .doc-controls {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
@@ -165,7 +165,19 @@ textarea {
 
 
 /* MEDIA QUERIES */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .doc-controls {
+    flex-flow: row nowrap;
+  }
+}
+
+
 @media (min-width: 1200px) {
+  .doc-controls {
+    flex-flow: row nowrap;
+  }
+  
   main {
     width: 75%;
     margin: 0 auto;
