@@ -64,9 +64,7 @@ class App extends Component {
   }
 
   onType = (id, updatedField, updatedValue) => {
-    // iterate over notes
     const updatedNotes = this.state.notes.map((note) => {
-      // find id of note that user typed in
       if (note.id !== id) {
         return note;
       } else if (updatedField === "title") {
@@ -77,14 +75,14 @@ class App extends Component {
         return note;
       }
     })
-    // update notes
+    
     this.setState({ notes: updatedNotes });
   };
 
   onSearch = (text) => {
-    // lowercase search text
+    
     const searchTerms = text.toLowerCase();
-    // compare search text with title and content text
+    
     const updatedNotes = this.state.notes.map((note) => {
       if (!searchTerms || searchTerms === undefined) {
         note.doesMatchSearch = true;
@@ -108,7 +106,7 @@ class App extends Component {
         return note;
       }
     });
-    // filter notes
+    
     this.setState({ notes: updatedNotes });
   };
 
