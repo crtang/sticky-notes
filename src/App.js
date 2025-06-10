@@ -59,7 +59,15 @@ class App extends Component {
   };
 
   clearNotes = () => {
-    this.setState({ notes: "" });
+    const noNotes = {
+      id: Date.now(),
+      title: "Untitled",
+      content: "Type here.",
+      doesMatchSearch: true,
+    };
+    
+    const newNotes = [noNotes];
+    this.setState({ notes: newNotes });
     window.location.reload();
   }
 
