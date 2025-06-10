@@ -123,6 +123,10 @@ textarea {
   color: #888888;
 }
 
+[value] {
+  color: #000000;
+}
+
 .note-title, .note-content {
   width: 100%;
   border: none;
