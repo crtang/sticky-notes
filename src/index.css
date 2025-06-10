@@ -119,6 +119,10 @@ textarea {
   border-radius: 5px;
 }
 
+[placeholder] {
+  color: #888888;
+}
+
 .note-title, .note-content {
   width: 100%;
   border: none;
