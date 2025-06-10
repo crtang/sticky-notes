@@ -1,5 +1,3 @@
-import React from "react";
-
 const Note = (props) => {
 	const updateTitle = (e) => {
 		const updatedTitle = e.target.value;
