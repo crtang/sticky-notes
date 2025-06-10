@@ -123,6 +123,10 @@ textarea {
   color: #888888;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 [value] {
   color: #000000;
 }

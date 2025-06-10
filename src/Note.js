@@ -22,7 +22,7 @@ const Note = (props) => {
 			<input
 				className="note-title"
 				type="text"
-				placeholder="Untitled"
+				placeholder={props.note.title ? "" : "Untitled"}
 				value={props.note.title}
 				onChange={updateTitle}
 			/>
@@ -30,7 +30,7 @@ const Note = (props) => {
       <textarea
 				className="note-content"
 				type="text"
-				placeholder="Type here."
+				placeholder={props.note.content ? "" : "Type here."}
 				value={props.note.content}
 				onChange={updateContent}
 			/>
