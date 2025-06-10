@@ -11,8 +11,8 @@ class App extends Component {
       notes: [
         {
           id: Date.now(),
-          title: "Untitled",
-          content: "Type here.",
+          title: "",
+          content: "",
           doesMatchSearch: true,
         },
       ],
@@ -49,8 +49,8 @@ class App extends Component {
   addNote = () => {
     const newNote = {
       id: Date.now(),
-      title: "Untitled",
-      content: "Type here.",
+      title: "",
+      content: "",
       doesMatchSearch: true,
     };
 
@@ -61,11 +61,11 @@ class App extends Component {
   clearNotes = () => {
     const noNotes = {
       id: Date.now(),
-      title: "Untitled",
-      content: "Type here.",
+      title: "",
+      content: "",
       doesMatchSearch: true,
     };
-    
+
     const newNotes = [noNotes];
     this.setState({ notes: newNotes });
     window.location.reload();
