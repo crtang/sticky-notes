@@ -119,11 +119,11 @@ textarea {
   border-radius: 5px;
 }
 
-[placeholder] {
+input[placeholder="Untitled"], textarea[placeholder="Type here."] {
   color: #888888;
 }
 
-input:focus::placeholder {
+input:focus::placeholder, textarea:focus::placeholder {
   color: transparent;
 }
 
