@@ -69,7 +69,7 @@ class App extends Component {
     const newNotes = [noNotes];
     this.setState({ notes: newNotes });
     window.location.reload();
-  }
+  };
 
   onType = (id, updatedField, updatedValue) => {
     const updatedNotes = this.state.notes.map((note) => {
