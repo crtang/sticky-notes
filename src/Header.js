@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Header = (props) => {
 	const callSearch = (e) => {
 		return props.onSearch(e.target.value);
